@@ -4,7 +4,8 @@ import {
   TextInput,
   StyleSheet,
   TouchableOpacity,
-  Text
+  Text,
+  Keyboard
 } from 'react-native';
 import useTaskStore from '../hooks/useTaskStore';
 import { COLORS } from '../constants/colors';
@@ -19,13 +20,14 @@ const TaskInput: React.FC<TaskProps> = ({ onAddTask }) => {
   const { addTask } = useTaskStore();
 
   const handleSubmit = (): void => {
-    if (title.trim()) {
+    if (title.trim() && description.trim()) {
       addTask({
         title: title.trim(),
         description: description.trim()
       });
       resetForm();
       onAddTask();
+      Keyboard.dismiss();
     }
   };
 

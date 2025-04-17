@@ -1,11 +1,9 @@
 // Libraries
-import React, { useState } from 'react';
-import { View, ScrollView, StyleSheet } from 'react-native';
-
+import React, { useState, useEffect } from 'react';
+import { View, StyleSheet, Alert, Keyboard } from 'react-native';
 // Hooks & Constants
 import useTaskStore from '../hooks/useTaskStore';
 import { COLORS } from '../constants/colors';
-
 // Components
 import TaskList from '../components/TaskList';
 import EmptyState from '../components/EmptyState';
@@ -23,44 +21,43 @@ const TaskScreen: React.FC = () => {
   };
 
   const handleTaskPress = (taskId: string): void => {
-    setActiveTask(taskId);
+    if (activeTaskId === taskId) {
+      setActiveTask(null);
+    } else {
+      setActiveTask(taskId);
+    }
   };
 
   const handleDeleteRequest = (taskId: string): void => {
+      Keyboard.dismiss();
     setTaskToDelete(taskId);
     setShowDeleteConfirm(true);
   };
 
   const closeModal = (): void => {
     setShowAddTask(false);
+    setShowDeleteConfirm(false);
+    setTaskToDelete(null);
   };
 
   return (
     <View style={styles.container}>
-
-      <TaskInput
-
-      />
-
+      <TaskInput onAddTask={handleAddTask} />
       {tasks.length === 0 ? (
         <EmptyState onAddPress={handleAddTask} />
       ) : (
-        <ScrollView>
-          <TaskList
-            tasks={tasks}
-            activeTaskId={activeTaskId}
-            onTaskPress={handleTaskPress}
-            onDeletePress={handleDeleteRequest}
-          />
-        </ScrollView>
+        <TaskList
+          tasks={tasks}
+          activeTaskId={activeTaskId}
+          onTaskPress={handleTaskPress}
+          onDeletePress={handleDeleteRequest}
+        />
       )}
-
-
 
       <DeleteConfirmation
         visible={showDeleteConfirm}
         taskId={taskToDelete}
-        onClose={() => setShowDeleteConfirm(false)}
+        onClose={closeModal}
       />
     </View>
   );
@@ -76,6 +73,3 @@ const styles = StyleSheet.create({
 });
 
 export default TaskScreen;
-
-
-
