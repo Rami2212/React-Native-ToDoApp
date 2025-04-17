@@ -100,9 +100,9 @@ const styles = StyleSheet.create({
     borderColor: COLORS.PRIMARY,
     borderRadius: 4,
     padding: 8,
-    color: COLORS.TEXT_SECONDARY,
+    color: COLORS.TEXT_PRIMARY_LOW_OPACITY,
     fontSize: 14,
-    fontFamily: 'Roboto',
+    fontFamily: 'Roboto-VariableFont',
   },
 
   //Button Column
@@ -117,8 +117,7 @@ const styles = StyleSheet.create({
   addButton: {
     width: 70,
     height: 70,
-    backgroundColor: COLORS.BACKGROUND_SECONDARY,
-    borderWidth: 1,
+    borderWidth: 2,
     borderColor: COLORS.PRIMARY,
     borderRadius: 4,
     justifyContent: 'center',
@@ -127,9 +126,10 @@ const styles = StyleSheet.create({
 
   //Icon
   plusIcon: {
-    fontSize: 24,
+    fontSize: 44,
     color: COLORS.PRIMARY,
-    fontWeight: 'bold',
+    fontWeight: 300,
+    marginTop: -5,
   }
 });
 

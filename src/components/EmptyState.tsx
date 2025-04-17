@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontFamily: 'Inter-VariableFont',
     fontWeight: 400,
-    color: COLORS.TEXT_PRIMARY,
+    color: COLORS.TEXT_SECONDARY,
     marginTop: 12,
     marginBottom: 12,
   },
