@@ -10,16 +10,23 @@ import useTaskStore from '../hooks/useTaskStore';
 import { COLORS } from '../constants/colors';
 
 interface TaskProps {
-
+  onAddTask: () => void;
 }
 
-const TaskInput: React.FC<TaskProps> = ({  }) => {
+const TaskInput: React.FC<TaskProps> = ({ onAddTask }) => {
   const [title, setTitle] = useState<string>('');
   const [description, setDescription] = useState<string>('');
   const { addTask } = useTaskStore();
 
   const handleSubmit = (): void => {
-
+    if (title.trim()) {
+      addTask({
+        title: title.trim(),
+        description: description.trim()
+      });
+      resetForm();
+      onAddTask();
+    }
   };
 
   const resetForm = (): void => {
@@ -68,6 +75,7 @@ const styles = StyleSheet.create({
   container: {
     width: '100%',
     paddingTop: 10,
+    paddingBottom: 33,
   },
 
   //Row
@@ -93,6 +101,7 @@ const styles = StyleSheet.create({
     borderRadius: 4,
     padding: 8,
     color: COLORS.TEXT_SECONDARY,
+    fontSize: 14,
     fontFamily: 'Roboto',
   },
 

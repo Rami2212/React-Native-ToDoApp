@@ -1,6 +1,6 @@
 // Libraries
 import React, { useState } from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View, ScrollView, StyleSheet } from 'react-native';
 
 // Hooks & Constants
 import useTaskStore from '../hooks/useTaskStore';
@@ -42,7 +42,26 @@ const TaskScreen: React.FC = () => {
 
       />
 
+      {tasks.length === 0 ? (
+        <EmptyState onAddPress={handleAddTask} />
+      ) : (
+        <ScrollView>
+          <TaskList
+            tasks={tasks}
+            activeTaskId={activeTaskId}
+            onTaskPress={handleTaskPress}
+            onDeletePress={handleDeleteRequest}
+          />
+        </ScrollView>
+      )}
 
+
+
+      <DeleteConfirmation
+        visible={showDeleteConfirm}
+        taskId={taskToDelete}
+        onClose={() => setShowDeleteConfirm(false)}
+      />
     </View>
   );
 };
