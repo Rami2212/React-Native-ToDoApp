@@ -1,13 +1,16 @@
+// Libraries
 import React, { useState } from 'react';
 import { View, StyleSheet } from 'react-native';
-import useTaskStore from '../hooks/useTaskStore';
 
-import TaskHeader from '../components/TaskHeader';
+// Hooks & Constants
+import useTaskStore from '../hooks/useTaskStore';
+import { COLORS } from '../constants/colors';
+
+// Components
 import TaskList from '../components/TaskList';
 import EmptyState from '../components/EmptyState';
 import TaskInput from '../components/TaskInput';
 import DeleteConfirmation from '../components/DeleteConfirmation';
-import { COLORS } from '../constants/colors';
 
 const TaskScreen: React.FC = () => {
   const { tasks, activeTaskId, setActiveTask } = useTaskStore();
@@ -35,6 +38,10 @@ const TaskScreen: React.FC = () => {
   return (
     <View style={styles.container}>
 
+      <TaskInput
+
+      />
+
 
     </View>
   );
@@ -50,3 +57,6 @@ const styles = StyleSheet.create({
 });
 
 export default TaskScreen;
+
+
+
