@@ -55,18 +55,29 @@ export type TaskInputProps = {
   onAddTask: () => void;
 };
 
-export interface Task {
-  id: string;
-  title: string;
-  description: string;
-  completed: boolean;
-  createdAt: string;
-}
+// TaskItem types
+export type TaskItemProps = {
+  task: Task;
+  isActive: boolean;
+  onPress: () => void;
+  onDelete: () => void;
+};
 
-export interface TaskInput {
-  title: string;
-  description: string;
-}
+// DeleteButton types
+export type DeleteButtonProps = {
+  onPress: (e: any) => void;
+  style?: StyleProp<ViewStyle>;
+};
+
+// CompletedCheckbox types
+export type CompletedCheckboxProps = {
+  completed: boolean;
+  onPress: (e: any) => void;
+  style?: StyleProp<ViewStyle>;
+};
+
+
+
 
 export interface TaskStoreState {
   tasks: Task[];
