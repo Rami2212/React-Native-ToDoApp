@@ -1,20 +1,18 @@
 import React, { useState } from 'react';
 import {
   View,
-  TextInput,
   StyleSheet,
-  TouchableOpacity,
-  Text,
   Keyboard
 } from 'react-native';
 import useTaskStore from '../hooks/useTaskStore';
 import { COLORS } from '../constants/colors';
+import CustomInput from '../components/CustomInput';
+import AddTaskButton from '../components/AddTaskButton';
+import { TaskInputProps } from '../types';
 
-interface TaskProps {
-  onAddTask: () => void;
-}
-
-const TaskInput: React.FC<TaskProps> = ({ onAddTask }) => {
+const TaskInput = ({
+  onAddTask
+}: TaskInputProps) => {
   const [title, setTitle] = useState<string>('');
   const [description, setDescription] = useState<string>('');
   const { addTask } = useTaskStore();
@@ -40,32 +38,24 @@ const TaskInput: React.FC<TaskProps> = ({ onAddTask }) => {
     <View style={styles.container}>
       <View style={styles.rowContainer}>
         <View style={styles.inputColumn}>
-          <TextInput
-            style={styles.inputField}
+          <CustomInput
             placeholder="Title..."
-            placeholderTextColor={COLORS.TEXT_SECONDARY}
             value={title}
             onChangeText={setTitle}
             maxLength={50}
           />
 
-          <TextInput
-            style={styles.inputField}
+          <CustomInput
             placeholder="About..."
-            placeholderTextColor={COLORS.TEXT_SECONDARY}
             value={description}
             onChangeText={setDescription}
             maxLength={200}
+            style={styles.descriptionInput}
           />
         </View>
 
         <View style={styles.buttonColumn}>
-          <TouchableOpacity
-            style={styles.addButton}
-            onPress={handleSubmit}
-          >
-            <Text style={styles.plusIcon}>+</Text>
-          </TouchableOpacity>
+          <AddTaskButton onPress={handleSubmit} />
         </View>
       </View>
     </View>
@@ -73,6 +63,7 @@ const TaskInput: React.FC<TaskProps> = ({ onAddTask }) => {
 };
 
 const styles = StyleSheet.create({
+
   //Container
   container: {
     width: '100%',
@@ -88,51 +79,19 @@ const styles = StyleSheet.create({
     gap: '2%',
   },
 
-  //Input Column
+  // Input Column
   inputColumn: {
     width: '78%',
     gap: 6,
   },
 
-  //Input Field Column
-  inputField: {
-    height: 32,
-    backgroundColor: COLORS.BACKGROUND_SECONDARY,
-    borderWidth: 1,
-    borderColor: COLORS.PRIMARY,
-    borderRadius: 4,
-    padding: 8,
-    color: COLORS.TEXT_PRIMARY_LOW_OPACITY,
-    fontSize: 14,
-    fontFamily: 'Roboto-VariableFont',
-  },
-
-  //Button Column
+  // Button Column
   buttonColumn: {
     width: '20%',
     height: 70,
     justifyContent: 'center',
     alignItems: 'center',
   },
-
-  //Button
-  addButton: {
-    width: 70,
-    height: 70,
-    borderWidth: 2,
-    borderColor: COLORS.PRIMARY,
-    borderRadius: 4,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-
-  //Icon
-  plusIcon: {
-    fontSize: 44,
-    color: COLORS.PRIMARY,
-    fontWeight: 300,
-    marginTop: -5,
-  }
 });
 
 export default TaskInput;

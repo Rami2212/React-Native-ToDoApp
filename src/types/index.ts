@@ -15,7 +15,7 @@ export type DeleteConfirmationProps = {
   onClose: () => void;
 };
 
-// Input Field types
+// CustomInput types
 export type CustomInputProps = {
   placeholder: string;
   value: string;
@@ -24,6 +24,7 @@ export type CustomInputProps = {
   style?: StyleProp<ViewStyle>;
   inputStyle?: StyleProp<TextStyle>;
   maxLength?: number;
+  placeholderTextColor?: string;
 };
 
 // Edit Task Modal types
@@ -47,6 +48,11 @@ export type Task = {
   description: string;
   completed: boolean;
   createdAt: string;
+};
+
+// TaskInput types
+export type TaskInputProps = {
+  onAddTask: () => void;
 };
 
 export interface Task {
