@@ -107,6 +107,11 @@ export type TaskListProps = {
   onSharePress: (taskId: string) => void;
 };
 
+// Social Media Icon Types
+export type SocialMediaIconProps = {
+  imageSource: ImageSourcePropType;
+  onPress: () => void;
+}
 
 
 

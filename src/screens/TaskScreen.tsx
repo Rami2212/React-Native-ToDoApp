@@ -67,6 +67,7 @@ const TaskScreen = () => {
     setShowDeleteConfirm(false);
     setTaskToDelete(null);
     setShowEditTaskModal(false);
+    setShowShareTaskModal(false);
     setTaskToEdit(null);
   };
 
