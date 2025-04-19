@@ -32,20 +32,20 @@ const styles = StyleSheet.create({
     height: 24,
     borderRadius: 4,
     borderWidth: 2,
-    borderColor: COLORS.PRIMARY,
+    borderColor: COLORS.SECONDARY,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: COLORS.BACKGROUND,
   },
   checkboxCompleted: {
     backgroundColor: COLORS.BACKGROUND_SECONDARY,
-    borderColor: COLORS.PRIMARY,
+    borderColor: COLORS.SECONDARY,
   },
   checkmark: {
     width: 12,
     height: 12,
     borderRadius: 6,
-    backgroundColor: COLORS.PRIMARY,
+    backgroundColor: COLORS.SECONDARY,
   },
 });
 

@@ -30,11 +30,11 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     borderWidth: 2,
-    borderColor: COLORS.PRIMARY,
+    borderColor: COLORS.SECONDARY,
   },
   deleteButtonText: {
     fontSize: 22,
-    color: COLORS.PRIMARY,
+    color: COLORS.SECONDARY,
     fontWeight: '400',
     marginTop: -2,
   },

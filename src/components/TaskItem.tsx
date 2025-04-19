@@ -89,7 +89,7 @@ const styles = StyleSheet.create({
     padding: 16,
     marginVertical: 8,
     borderWidth: 2,
-    borderColor: COLORS.PRIMARY,
+    borderColor: COLORS.SECONDARY,
     gap: 16,
   },
   // Active Task

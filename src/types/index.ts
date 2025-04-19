@@ -1,4 +1,4 @@
-import { StyleProp, ViewStyle, TextStyle } from 'react-native';
+import { StyleProp, ViewStyle, TextStyle, ImageSourcePropType } from 'react-native';
 
 // CustomButton types
 export type CustomButtonProps = {
@@ -32,7 +32,7 @@ export type EditTaskModalProps = {
   visible: boolean;
   task: Task | null;
   onClose: () => void;
-  onSave: (task: Task) => void;
+  //onSave: (task: Task) => void;
 };
 
 // AddTaskButton types
@@ -78,7 +78,7 @@ export type CompletedCheckboxProps = {
 
 // Action Button types
 export type ActionButtonProps = {
-  icon: string; // We'll use a simple text character as icon
+  imageSource: ImageSourcePropType;
   onPress: () => void;
   style?: StyleProp<ViewStyle>;
 };
@@ -96,6 +96,7 @@ export type TaskListProps = {
   activeTaskId: string | null;
   onTaskPress: (taskId: string) => void;
   onDeletePress: (taskId: string) => void;
+  onEditPress: (taskId: string) => void;
 };
 
 
