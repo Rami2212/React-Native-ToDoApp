@@ -25,6 +25,9 @@ const TaskInput = ({
       resetForm();
       //onAddTask();
       Keyboard.dismiss();
+    } else {
+      // Handle empty input case
+      console.log('Please enter title and description');
     }
   };
 

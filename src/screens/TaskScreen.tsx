@@ -46,7 +46,6 @@ const TaskScreen = () => {
 
   const handleEditRequest = (taskId: string) => {
     Keyboard.dismiss();
-    const task = tasks.find(t => t.id === taskId);
     setTaskToEdit(taskId);
     setShowEditTaskModal(true);
   };
@@ -57,10 +56,6 @@ const TaskScreen = () => {
       setTaskToShare(taskId);
       setShowShareTaskModal(true);
     };
-
-  const handleSaveTask = (updatedTask: Task) => {
-    updateTask(updatedTask.id, updatedTask);
-  };
 
   const closeModal = () => {
     //setShowAddTask(false);

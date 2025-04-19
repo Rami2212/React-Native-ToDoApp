@@ -12,32 +12,59 @@ import { taskStore } from '../store/taskStore';
 
 const EditTaskModal = ({
   visible,
-  task,
+  taskId,
   onClose,
 }: EditTaskModalProps) => {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
 
   useEffect(() => {
-    if (task) {
-      setTitle(task.title);
-      setBody(task.description);
+    if (taskId) {
+      setTitle(taskId.title);
+      setDescription(taskId.description);
     }
-  }, [task]);
+  }, [taskId]);
 
   const handleSave = () => {
-    if (!task) return;
+    if (!taskId) return;
 
-    taskStore.getState().updateTask(task.id, {
-      title,
-      description,
-    });
+    const currentTasks = taskStore.getState().tasks;
+    const taskToUpdate = currentTasks.find(task => task.id === taskId);
 
+    if (!taskToUpdate) {
+      console.log('Task not found');
+      return;
+    }
+
+    const updates: Partial<typeof taskToUpdate> = {};
+
+    if ((title ?? '').trim() !== '') {
+      updates.title = title.trim();
+    }
+
+    if ((description ?? '').trim() !== '') {
+      updates.description = description.trim();
+    }
+
+    if (Object.keys(updates).length === 0) {
+      console.log('Nothing to update');
+      return;
+    }
+
+    taskStore.getState().updateTask(taskId, updates);
+
+    resetForm();
     onClose();
   };
 
+
   const handleCancel = () => {
     onClose();
+  };
+
+  const resetForm = (): void => {
+    setTitle('');
+    setDescription('');
   };
 
   return (

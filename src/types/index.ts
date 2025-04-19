@@ -38,9 +38,8 @@ export type CustomButtonProps = {
 // Edit Task Modal types
 export type EditTaskModalProps = {
   visible: boolean;
-  task: Task | null;
+  taskId: string | null;
   onClose: () => void;
-  //onSave: (task: Task) => void;
 };
 
 // DeleteConfirmation types
@@ -108,10 +107,8 @@ export type ShareTaskModalProps = {
   onClose: () => void;
 };
 
-
-
-
-export interface TaskStoreState {
+// Task Store Types
+export type TaskStoreState {
   tasks: Task[];
   activeTaskId: string | null;
   addTask: (task: TaskInput) => void;
