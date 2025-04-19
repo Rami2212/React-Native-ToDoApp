@@ -9,6 +9,8 @@ const TaskList = ({
   activeTaskId,
   onTaskPress,
   onDeletePress,
+  onEditPress,
+  onSharePress,
 }: TaskListProps) => {
   return (
     <FlatList
@@ -23,7 +25,11 @@ const TaskList = ({
             onDelete={() => onDeletePress(item.id)}
           />
           {item.id === activeTaskId && (
-            <TaskActions taskId={item.id} />
+            <TaskActions
+              taskId={item.id}
+              onEdit={() => onEditPress(item.id)}
+              onShare={() => onSharePress(item.id)}
+            />
           )}
         </View>
       )}

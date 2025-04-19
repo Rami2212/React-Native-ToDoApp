@@ -11,7 +11,6 @@ import AddTaskButton from '../components/AddTaskButton';
 import { TaskInputProps } from '../types';
 
 const TaskInput = ({
-  onAddTask
 }: TaskInputProps) => {
   const [title, setTitle] = useState<string>('');
   const [description, setDescription] = useState<string>('');
@@ -24,7 +23,7 @@ const TaskInput = ({
         description: description.trim()
       });
       resetForm();
-      onAddTask();
+      //onAddTask();
       Keyboard.dismiss();
     }
   };
