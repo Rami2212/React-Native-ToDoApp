@@ -1,18 +1,12 @@
 import { StyleProp, ViewStyle, TextStyle, ImageSourcePropType } from 'react-native';
 
-// CustomButton types
-export type CustomButtonProps = {
+// Task type
+export type Task = {
+  id: string;
   title: string;
-  onPress: () => void;
-  style?: StyleProp<ViewStyle>;
-  textStyle?: StyleProp<TextStyle>;
-};
-
-// DeleteConfirmation types
-export type DeleteConfirmationProps = {
-  visible: boolean;
-  taskId: string | null;
-  onClose: () => void;
+  description: string;
+  completed: boolean;
+  createdAt: string;
 };
 
 // CustomInput types
@@ -27,6 +21,20 @@ export type CustomInputProps = {
   placeholderTextColor?: string;
 };
 
+// AddTaskButton types
+export type AddTaskButtonProps = {
+  onPress: () => void;
+  style?: StyleProp<ViewStyle>;
+};
+
+// CustomButton types
+export type CustomButtonProps = {
+  title: string;
+  onPress: () => void;
+  style?: StyleProp<ViewStyle>;
+  textStyle?: StyleProp<TextStyle>;
+};
+
 // Edit Task Modal types
 export type EditTaskModalProps = {
   visible: boolean;
@@ -35,39 +43,18 @@ export type EditTaskModalProps = {
   //onSave: (task: Task) => void;
 };
 
-// Share Task Modal types
-export type ShareTaskModalProps = {
+// DeleteConfirmation types
+export type DeleteConfirmationProps = {
   visible: boolean;
-  task: Task | null;
+  taskId: string | null;
   onClose: () => void;
 };
 
-// AddTaskButton types
-export type AddTaskButtonProps = {
-  onPress: () => void;
-  style?: StyleProp<ViewStyle>;
-};
-
-// Task type
-export type Task = {
-  id: string;
-  title: string;
-  description: string;
+// CompletedCheckbox types
+export type CompletedCheckboxProps = {
   completed: boolean;
-  createdAt: string;
-};
-
-// TaskInput types
-export type TaskInputProps = {
-  onAddTask: () => void;
-};
-
-// TaskItem types
-export type TaskItemProps = {
-  task: Task;
-  isActive: boolean;
-  onPress: () => void;
-  onDelete: () => void;
+  onPress: (e: any) => void;
+  style?: StyleProp<ViewStyle>;
 };
 
 // DeleteButton types
@@ -76,11 +63,12 @@ export type DeleteButtonProps = {
   style?: StyleProp<ViewStyle>;
 };
 
-// CompletedCheckbox types
-export type CompletedCheckboxProps = {
-  completed: boolean;
-  onPress: (e: any) => void;
-  style?: StyleProp<ViewStyle>;
+// TaskItem types
+export type TaskItemProps = {
+  task: Task;
+  isActive: boolean;
+  onPress: () => void;
+  onDelete: () => void;
 };
 
 // Action Button types
@@ -112,6 +100,14 @@ export type SocialMediaIconProps = {
   imageSource: ImageSourcePropType;
   onPress: () => void;
 }
+
+// Share Task Modal types
+export type ShareTaskModalProps = {
+  visible: boolean;
+  task: Task | null;
+  onClose: () => void;
+};
+
 
 
 
