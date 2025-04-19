@@ -1,6 +1,8 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export const storage = {
+
+  // Get item from storage
   getItem: async<T>(key: string): Promise<T | null> => {
     try {
       const item = await AsyncStorage.getItem(key);
@@ -11,6 +13,7 @@ export const storage = {
     }
   },
 
+  // Set item in storage
   setItem: async<T>(key: string, value: T): Promise<boolean> => {
     try {
       await AsyncStorage.setItem(key, JSON.stringify(value));
@@ -21,6 +24,7 @@ export const storage = {
     }
   },
 
+  // Remove item from storage
   removeItem: async(key: string): Promise<boolean> => {
     try {
       await AsyncStorage.removeItem(key);
@@ -31,6 +35,7 @@ export const storage = {
     }
   },
 
+  // Clear all item from storage
   clear: async(): Promise<boolean> => {
     try {
       await AsyncStorage.clear();
@@ -41,6 +46,7 @@ export const storage = {
     }
   },
 
+  // Get all keys from storage
   getAllKeys: async(): Promise<string[] | null> => {
     try {
       return await AsyncStorage.getAllKeys();
