@@ -1,14 +1,10 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 import { COLORS } from '../constants/colors';
 import { GLOBAL_STYLES } from '../constants/styles';
-import AddTaskButton from './AddTaskButton';
+import { EmptyStateProps } from '../types';
 
-interface EmptyStateProps {
-  onAddPress: () => void;
-}
-
-const EmptyState: React.FC<EmptyStateProps> = ({ onAddPress }) => {
+const EmptyState = () => {
   return (
     <View style={styles.container}>
       <View style={styles.emptyIndicator} />
@@ -19,11 +15,10 @@ const EmptyState: React.FC<EmptyStateProps> = ({ onAddPress }) => {
 };
 
 const styles = StyleSheet.create({
-
   //Container
   container: {
     flex: 1,
-    justifyContent: 'start',
+    justifyContent: 'flex-start',
     alignItems: 'center',
     marginTop: 72,
   },
@@ -32,7 +27,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 24,
     fontFamily: 'Inter-VariableFont',
-    fontWeight: 400,
+    fontWeight: '400',
     color: COLORS.TEXT_SECONDARY,
     marginTop: 12,
     marginBottom: 12,

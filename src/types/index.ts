@@ -76,6 +76,28 @@ export type CompletedCheckboxProps = {
   style?: StyleProp<ViewStyle>;
 };
 
+// Action Button types
+export type ActionButtonProps = {
+  icon: string; // We'll use a simple text character as icon
+  onPress: () => void;
+  style?: StyleProp<ViewStyle>;
+};
+
+// Task Actions types
+export type TaskActionsProps = {
+  taskId: string;
+  onEdit?: () => void;
+  onShare?: () => void;
+};
+
+// TaskList types
+export type TaskListProps = {
+  tasks: Task[];
+  activeTaskId: string | null;
+  onTaskPress: (taskId: string) => void;
+  onDeletePress: (taskId: string) => void;
+};
+
 
 
 
