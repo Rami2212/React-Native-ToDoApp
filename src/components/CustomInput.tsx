@@ -47,8 +47,9 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontFamily: 'Roboto-VariableFont',
   },
+
   multilineInput: {
-    minHeight: 100,
+    minHeight: 343,
     textAlignVertical: 'top',
   },
 });

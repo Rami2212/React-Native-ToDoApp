@@ -35,6 +35,13 @@ export type EditTaskModalProps = {
   //onSave: (task: Task) => void;
 };
 
+// Share Task Modal types
+export type ShareTaskModalProps = {
+  visible: boolean;
+  task: Task | null;
+  onClose: () => void;
+};
+
 // AddTaskButton types
 export type AddTaskButtonProps = {
   onPress: () => void;
@@ -97,6 +104,7 @@ export type TaskListProps = {
   onTaskPress: (taskId: string) => void;
   onDeletePress: (taskId: string) => void;
   onEditPress: (taskId: string) => void;
+  onSharePress: (taskId: string) => void;
 };
 
 
