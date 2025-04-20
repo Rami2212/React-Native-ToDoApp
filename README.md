@@ -1,97 +1,132 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# TaskMaster - React Native Todo App
 
-# Getting Started
+A feature-rich task management application built with React Native, TypeScript, and Zustand for state management. The app follows Material Design principles with custom styling and uses persistent storage to save your tasks locally.
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+## Demo Video
 
-## Step 1: Start Metro
+![To Do List App Demo]()
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+## Figma Link Used
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+![To Do List App Figma Design]()
 
-```sh
-# Using npm
+https://www.figma.com/design/0voUh3g2fDdGMbKNibqygj/To-Do-List--Community
+
+## Features
+
+- ✅ Add new tasks with custom titles and descriptions
+- ✅ Mark tasks as complete with visual indicators
+- ✅ Delete tasks individually
+- ✅ Edit existing tasks
+- ✅ Share tasks with others (Partially implemented)
+- ✅ Persistent storage using AsyncStorage
+- ✅ Clean and intuitive UI following Material Design principles
+- ✅ Custom fonts for enhanced visual appeal
+
+## Folder Structure
+
+```
+src/
+├── components/
+│   ├── ActionButton.tsx
+│   ├── AddTaskButton.tsx
+│   ├── CompletedCheckbox.tsx
+│   ├── CustomButton.tsx
+│   ├── CustomInput.tsx
+│   ├── DeleteButton.tsx
+│   ├── DeleteConfirmation.tsx
+│   ├── EditTaskModal.tsx
+│   ├── EmptyState.tsx
+│   ├── ShareTaskModal.tsx
+│   ├── SocialMediaIcon.tsx
+│   ├── TaskActions.tsx
+│   ├── TaskInput.tsx
+│   ├── TaskItem.tsx
+│   └── TaskList.tsx
+├── constants/
+│   ├── colors.ts
+│   └── styles.ts
+├── hooks/
+│   └── useTaskStore.ts
+├── screens/
+│   └── TaskScreen.tsx
+├── store/
+│   └── taskStore.ts
+│── App.tsx
+└── index.js
+
+```
+
+## Prerequisites
+
+Before you begin, ensure you have the following installed:
+- [Node.js](https://nodejs.org/) (v14 or newer)
+- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
+- [React Native CLI](https://reactnative.dev/docs/environment-setup)
+- Android Studio (for Android development)
+- Xcode (for iOS development, macOS only)
+
+## Setup Instructions
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/Rami2212/React-Native-ToDoApp.git
+```
+
+### 2. Install dependencies
+
+```bash
+npm install
+# or
+yarn install
+```
+
+### 3. Install pods (iOS only)
+
+```bash
+cd ios
+pod install
+cd ..
+```
+
+### 4. Start the Metro bundler
+
+```bash
 npm start
-
-# OR using Yarn
+# or
 yarn start
 ```
 
-## Step 2: Build and run your app
-
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
+## Running the App
 
 ### Android
 
-```sh
-# Using npm
+```bash
 npm run android
-
-# OR using Yarn
+# or
+react-native run-android
+# or
 yarn android
 ```
 
-### iOS
+### iOS (macOS only)
 
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
-
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
-
-```sh
-bundle install
-```
-
-Then, and every time you update your native dependencies, run:
-
-```sh
-bundle exec pod install
-```
-
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
-
-```sh
-# Using npm
+```bash
 npm run ios
-
-# OR using Yarn
+# or
 yarn ios
 ```
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+## Custom Fonts
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
+This project uses custom fonts for enhanced visual appeal. The fonts are located in the `assets/fonts` directory and are loaded using React Native's font loading mechanism.
 
-## Step 3: Modify your app
+## State Management
 
-Now that you have successfully run the app, let's make changes!
+The app uses Zustand for state management, with the store defined in `src/store/taskStore.ts` and accessible via the custom hook `src/hooks/useTaskStore.ts`.
 
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
+## Persistent Storage
 
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
+Tasks are saved locally using AsyncStorage, ensuring that your data persists between app sessions.
 
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
