@@ -50,8 +50,8 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>Inter-VariableFont.ttf</string>
-		<string>Inter_18pt-Regular.ttf</string>
 		<string>Roboto-VariableFont.ttf</string>
+		<string>Poppins-Regular.ttf</string>
 	</array>
 </dict>
 </plist>
