@@ -1,14 +1,14 @@
-# TaskMaster - React Native Todo App
+# ToDoApp - React Native Todo List App
 
 A feature-rich task management application built with React Native, TypeScript, and Zustand for state management. The app follows Material Design principles with custom styling and uses persistent storage to save your tasks locally.
 
 ## Demo Video
 
-![To Do List App Demo]()
+[To Do List App Demo]()
 
 ## Figma Link Used
 
-![To Do List App Figma Design]()
+[To Do List App Figma Design]()
 
 https://www.figma.com/design/0voUh3g2fDdGMbKNibqygj/To-Do-List--Community
 
