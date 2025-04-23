@@ -92,7 +92,6 @@ const TaskScreen = () => {
         visible={showEditTaskModal}
         taskId={taskToEdit}
         onClose={closeModal}
-//         onSave={handleSaveTask}
       />
 
       <ShareTaskModal
@@ -105,6 +104,8 @@ const TaskScreen = () => {
 };
 
 const styles = StyleSheet.create({
+
+  // Container
   container: {
     flex: 1,
     backgroundColor: COLORS.BACKGROUND,

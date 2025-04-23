@@ -22,6 +22,8 @@ const AddTaskButton = ({
 };
 
 const styles = StyleSheet.create({
+
+  // Button Container
   addButton: {
     width: 70,
     height: 70,
@@ -31,6 +33,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+
+  // Icon
   plusIcon: {
     fontSize: 44,
     color: COLORS.PRIMARY,

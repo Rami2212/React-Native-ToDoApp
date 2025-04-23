@@ -15,11 +15,15 @@ const SocialMediaIcon = ({
 };
 
 const styles = StyleSheet.create({
+
+  // Icon Container
   iconContainer: {
     padding: 20,
     backgroundColor: '#23221F',
     borderRadius: 30,
   },
+
+  // Icon
   icon: {
     width: 21,
     height: 21,

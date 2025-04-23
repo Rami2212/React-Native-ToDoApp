@@ -22,6 +22,8 @@ const DeleteButton = ({
 };
 
 const styles = StyleSheet.create({
+
+  // Delete Button
   deleteButton: {
     width: 32,
     height: 32,
@@ -32,6 +34,8 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     borderColor: COLORS.SECONDARY,
   },
+
+  // Icon
   deleteButtonText: {
     fontSize: 22,
     color: COLORS.SECONDARY,

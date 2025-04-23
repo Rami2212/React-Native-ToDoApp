@@ -15,6 +15,7 @@ const EmptyState = () => {
 };
 
 const styles = StyleSheet.create({
+
   //Container
   container: {
     flex: 1,

@@ -58,6 +58,7 @@ const ShareTaskModal = ({
 
 const styles = StyleSheet.create({
 
+  // Modal Container
   modalContainer: {
     flex: 1,
     alignItems: 'center',
@@ -65,6 +66,7 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.BACKGROUND_OVERLAY,
   },
 
+  // Modal Content
   modalContent: {
     width: '100%',
     backgroundColor: COLORS.BACKGROUND,
@@ -75,6 +77,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
   },
 
+  // Button Container
   buttonContainer: {
     flexDirection: 'row',
     justifyContent: 'center',

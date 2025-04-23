@@ -27,6 +27,8 @@ const CompletedCheckbox = ({
 };
 
 const styles = StyleSheet.create({
+
+  // Checkbox
   checkbox: {
     width: 24,
     height: 24,
@@ -37,10 +39,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: COLORS.BACKGROUND,
   },
+
+  // Checkbox Completed
   checkboxCompleted: {
     backgroundColor: COLORS.BACKGROUND_SECONDARY,
     borderColor: COLORS.SECONDARY,
   },
+
+  // Checkmark
   checkmark: {
     width: 12,
     height: 12,

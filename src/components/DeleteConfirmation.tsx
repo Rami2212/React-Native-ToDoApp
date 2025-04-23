@@ -56,6 +56,8 @@ const DeleteConfirmation = ({
 };
 
 const styles = StyleSheet.create({
+
+  // Container
   modalContainer: {
     flex: 1,
     justifyContent: 'center',

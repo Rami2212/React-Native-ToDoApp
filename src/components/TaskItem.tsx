@@ -74,6 +74,7 @@ const TaskItem = ({
 };
 
 const styles = StyleSheet.create({
+
   // Container
   container: {
     flexDirection: 'row',
@@ -81,6 +82,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     overflow: 'hidden',
   },
+
   // Card
   card: {
     backgroundColor: COLORS.BACKGROUND_SECONDARY,
@@ -92,28 +94,34 @@ const styles = StyleSheet.create({
     borderColor: COLORS.SECONDARY,
     gap: 16,
   },
+
   // Active Task
   activeTask: {
     borderWidth: 2,
   },
+
   // Completed Task
   completedTask: {
     opacity: 0.7,
   },
+
   // Content Container
   contentContainer: {
     flex: 1,
     flexDirection: 'row',
     alignItems: 'center',
   },
+
   // Checkbox Container
   checkboxContainer: {
     marginRight: 16,
   },
+
   // Text Container
   textContainer: {
     flex: 1,
   },
+
   // Title
   title: {
     fontSize: 22,
@@ -122,6 +130,7 @@ const styles = StyleSheet.create({
     color: COLORS.TEXT_PRIMARY,
     marginBottom: 4,
   },
+
   // Description
   description: {
     fontSize: 14,
@@ -129,6 +138,7 @@ const styles = StyleSheet.create({
     fontWeight: '400',
     color: COLORS.TEXT_PRIMARY,
   },
+
   // Task Completed Text
   completedText: {
     textDecorationLine: 'line-through',

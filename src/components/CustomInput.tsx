@@ -33,9 +33,13 @@ const CustomInput = ({
 };
 
 const styles = StyleSheet.create({
+
+  // Input Container
   inputContainer: {
     width: '100%',
   },
+
+  // Input Field
   inputField: {
     height: 32,
     backgroundColor: COLORS.BACKGROUND_SECONDARY,
@@ -48,6 +52,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Roboto-VariableFont',
   },
 
+  // Multiline Input
   multilineInput: {
     minHeight: 343,
     textAlignVertical: 'top',

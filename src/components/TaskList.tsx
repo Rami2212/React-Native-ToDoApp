@@ -40,9 +40,13 @@ const TaskList = ({
 };
 
 const styles = StyleSheet.create({
+
+  // Container
   container: {
     flex: 1,
   },
+
+  // List Container
   listContent: {
     paddingBottom: 16,
   },
