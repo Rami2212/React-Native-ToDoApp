@@ -16,8 +16,6 @@ import { Task } from '../types';
 const TaskScreen = () => {
   const { tasks, activeTaskId, setActiveTask, updateTask } = useTaskStore();
 
-  //const [showAddTask, setShowAddTask] = useState(false);
-
   const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
   const [showEditTaskModal, setShowEditTaskModal] = useState(false);
   const [showShareTaskModal, setShowShareTaskModal] = useState(false);
@@ -25,10 +23,6 @@ const TaskScreen = () => {
   const [taskToDelete, setTaskToDelete] = useState(null);
   const [taskToEdit, setTaskToEdit] = useState(null);
   const [taskToShare, setTaskToShare] = useState(null);
-
-//   const handleAddTask = () => {
-//     setShowAddTask(true);
-//   };
 
   const handleTaskPress = (taskId: string) => {
     if (activeTaskId === taskId) {

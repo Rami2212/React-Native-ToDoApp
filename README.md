@@ -4,11 +4,9 @@ A feature-rich task management application built with React Native, TypeScript, 
 
 ## Demo Video
 
-[To Do List App Demo]()
+https://drive.google.com/file/d/15UuW2IlvE3D8JCODtJivXhojoOFHGIVj/view?usp=sharing
 
 ## Figma Link Used
-
-[To Do List App Figma Design]()
 
 https://www.figma.com/design/0voUh3g2fDdGMbKNibqygj/To-Do-List--Community
 
