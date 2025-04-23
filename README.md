@@ -103,6 +103,9 @@ yarn start
 ### Android
 
 ```bash
+
+Note: Run the emulator first. Then run the command below.
+
 npm run android
 # or
 react-native run-android
